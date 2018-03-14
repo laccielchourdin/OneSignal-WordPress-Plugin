@@ -626,11 +626,11 @@ class OneSignal_Admin {
           $site_title = OneSignalUtils::decode_entities(get_bloginfo('name'));
         }
 
-        if (function_exists('qtrans_getLanguage')) {
+        if (function_exists('qtranxf_getLanguage')) {
           try {
-            $qtransLang    = qtrans_getLanguage();
-            $site_title    = qtrans_use($qtransLang, $site_title, false);
-            $notif_content = qtrans_use($qtransLang, $notif_content, false);
+            $qtransLang    = qtranxf_getLanguage();
+            $site_title    = qtranxf_use($qtransLang, $site_title, false);
+            $notif_content = qtranxf_use($qtransLang, $notif_content, false);
           } catch (Exception $e) {
             onesignal_debug('Caught qTrans exception:', $e->getMessage());
           }
